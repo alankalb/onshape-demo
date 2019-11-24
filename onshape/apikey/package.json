@@ -1,0 +1,57 @@
+{
+  "_from": "@onshape/apikey",
+  "_id": "@onshape/apikey@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-iceTpQuoKQ72JZA6Y7bDyJjQc1brUP0Zore3krNBB9E7LvdZoGv1h4UIpxl5MxH4msog2XYYhjBrBWc8i5HQyg==",
+  "_location": "/@onshape/apikey",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@onshape/apikey",
+    "name": "@onshape/apikey",
+    "escapedName": "@onshape%2fapikey",
+    "scope": "@onshape",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@onshape/apikey/-/apikey-1.0.0.tgz",
+  "_shasum": "fc3f2c730f3829327e4e4577499a29e247882bab",
+  "_spec": "@onshape/apikey",
+  "_where": "/Users/alankalbfleisch/Documents/onshape_api/onshape-demo",
+  "author": {
+    "name": "Onshape Partner-API Team"
+  },
+  "bugs": {
+    "url": "https://github.com/onshape-public/apikey/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Sample application using API keys",
+  "devDependencies": {
+    "minimist": "^1.2.0",
+    "mocha": "^5.2.0"
+  },
+  "files": [
+    "/lib"
+  ],
+  "homepage": "https://github.com/onshape-public/apikey#readme",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "name": "@onshape/apikey",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onshape-public/apikey.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "sideEffects": false,
+  "version": "1.0.0"
+}
