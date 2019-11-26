@@ -20,6 +20,18 @@ var getFeatures = function(documentId, workspaceId, elementId, cb) {
   onshape.get(opts, cb);
 };
 
+var updateFeatures = function(documentId, workspaceId, elementId, body, cb) {
+  var opts = {
+    d: documentId,
+    w: workspaceId,
+    e: elementId + "/features/updates",
+    resource: "partstudios"
+  };
+
+  opts.body = body;
+  onshape.post(opts, cb);
+};
+
 var getMassProperties = function(documentId, wvm, wvmId, elementId, cb) {
   var opts = {
     d: documentId,
@@ -108,6 +120,7 @@ module.exports = function(creds) {
   return {
     getParts: getParts,
     getFeatures: getFeatures,
+    updateFeatures: updateFeatures,
     getMassProperties: getMassProperties,
     createPartStudio: createPartStudio,
     deleteElement: deleteElement,
