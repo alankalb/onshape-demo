@@ -20,6 +20,16 @@ var getFeatures = function(documentId, workspaceId, elementId, cb) {
   onshape.get(opts, cb);
 };
 
+var getShadedViews = function(documentId, workspaceId, elementId, cb) {
+  var opts = {
+    d: documentId,
+    w: workspaceId,
+    e: elementId + "/shadedviews",
+    resource: "partstudios"
+  };
+  onshape.get(opts, cb);
+};
+
 var updateFeatures = function(documentId, workspaceId, elementId, body, cb) {
   var opts = {
     d: documentId,
@@ -120,6 +130,7 @@ module.exports = function(creds) {
   return {
     getParts: getParts,
     getFeatures: getFeatures,
+    getShadedViews: getShadedViews,
     updateFeatures: updateFeatures,
     getMassProperties: getMassProperties,
     createPartStudio: createPartStudio,

@@ -1,0 +1,55 @@
+<h1>Cylinder Editor</h1>
+<div>
+  Diameter (in):
+  <input type="number" id="diam" value="" step="0.5" /><br /><br />
+  Depth (in): <input type="number" id="depth" value="" step="0.5" /><br /><br />
+  <button id="update" onclick="update()">Update</button>
+</div>
+<br />
+<img src="" id="partImage" />
+
+<script>
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.onreadystatechange = function() {
+    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+      var dimensions = JSON.parse(xmlHttp.response);
+      document.getElementById("diam").value = Number(
+        dimensions.diameter.replace(" in", "")
+      );
+      document.getElementById("depth").value = Number(
+        dimensions.depth.replace(" in", "")
+      );
+      document.getElementById("partImage").src =
+        "data:image/png;base64, " + dimensions.image;
+    }
+  };
+  xmlHttp.open("GET", "/current_state", true);
+  xmlHttp.send(null);
+
+  document.addEventListener("keyup", function(e) {
+    var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+    if (key === 13) {
+      update();
+    }
+  });
+
+  function update() {
+    var depth = document.getElementById("depth").value;
+    var diameter = document.getElementById("diam").value;
+
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+      if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+        var image = JSON.parse(xmlHttp.response);
+
+        document.getElementById("partImage").src =
+          "data:image/png;base64, " + image.image;
+      }
+    };
+    xmlHttp.open("PUT", "/update", true);
+    xmlHttp.setRequestHeader("Content-Type", "application/json");
+    xmlHttp.send(
+      JSON.stringify({ depth: depth + " in", diameter: diameter + " in" })
+    );
+  }
+</script>

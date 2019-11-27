@@ -13,8 +13,8 @@ var documentId = "547e3732e044297245400441";
 var workspaceId = "a4172eaa2592099428ac79c0";
 var elementId = "397254c5d1fc59b540638ee2";
 
-var newDiameter = "0.5 in";
-var newDepth = "1 in";
+var newDiameter = "3 in";
+var newDepth = "0.5 in";
 
 var getFeatures = async function(documentId, workspaceId, elementId) {
   let promise = new Promise((resolve, reject) => {
