@@ -1,3 +1,4 @@
 node_modules
 .env
 onshape_features.json
+nameplate_features.json
